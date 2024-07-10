@@ -17,4 +17,46 @@ Input: numBottles = 9, numExchange = 3
 Output: 13
 Explanation: You can exchange 3 empty bottles to get 1 full water bottle.
 Number of water bottles you can drink: 9 + 3 + 1 = 13.
- 
+
+ **problem -3**
+There is a restaurant with a single chef. You are given an array customers, where customers[i] = [arrivali, timei]:
+arrivali is the arrival time of the ith customer. The arrival times are sorted in non-decreasing order.
+timei is the time needed to prepare the order of the ith customer.
+When a customer arrives, he gives the chef his order, and the chef starts preparing it once he is idle. The customer waits till the chef finishes preparing his order. The chef does not prepare food for more than one customer at a time. The chef prepares food for customers in the order they were given in the input.
+
+Return the average waiting time of all customers. Solutions within 10-5 from the actual answer are considered accepted.
+Example 1:
+
+Input: customers = [[1,2],[2,5],[4,3]]
+Output: 5.00000
+Explanation:
+1) The first customer arrives at time 1, the chef takes his order and starts preparing it immediately at time 1, and finishes at time 3, so the waiting time of the first customer is 3 - 1 = 2.
+2) The second customer arrives at time 2, the chef takes his order and starts preparing it at time 3, and finishes at time 8, so the waiting time of the second customer is 8 - 2 = 6.
+3) The third customer arrives at time 4, the chef takes his order and starts preparing it at time 8, and finishes at time 11, so the waiting time of the third customer is 11 - 4 = 7.
+So the average waiting time = (2 + 6 + 7) / 3 = 5.
+
+**problem -4**
+There are n friends that are playing a game. The friends are sitting in a circle and are numbered from 1 to n in clockwise order. More formally, moving clockwise from the ith friend brings you to the (i+1)th friend for 1 <= i < n, and moving clockwise from the nth friend brings you to the 1st friend.
+
+The rules of the game are as follows:
+
+Start at the 1st friend.
+Count the next k friends in the clockwise direction including the friend you started at. The counting wraps around the circle and may count some friends more than once.
+The last friend you counted leaves the circle and loses the game.
+If there is still more than one friend in the circle, go back to step 2 starting from the friend immediately clockwise of the friend who just lost and repeat.
+Else, the last friend in the circle wins the game.
+Given the number of friends, n, and an integer k, return the winner of the game.
+
+Example 1:
+Input: n = 5, k = 2
+Output: 3
+Explanation: Here are the steps of the game:
+1) Start at friend 1.
+2) Count 2 friends clockwise, which are friends 1 and 2.
+3) Friend 2 leaves the circle. Next start is friend 3.
+4) Count 2 friends clockwise, which are friends 3 and 4.
+5) Friend 4 leaves the circle. Next start is friend 5.
+6) Count 2 friends clockwise, which are friends 5 and 1.
+7) Friend 1 leaves the circle. Next start is friend 3.
+8) Count 2 friends clockwise, which are friends 3 and 5.
+9) Friend 5 leaves the circle. Only friend 3 is left, so they are the winner.
